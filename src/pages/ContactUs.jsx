@@ -5,7 +5,6 @@ import {pageAnimation} from'../animation';
 
 
 
-
 const ContactUs = () => {
   return (
       <motion.div initial='hidden' exit="exit" animate='show' variants={pageAnimation} style={{background:"#fff"}}>

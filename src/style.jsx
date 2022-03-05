@@ -11,6 +11,7 @@ import styled from 'styled-components';
 
 export const Description = styled.div`
 flex: 1;
+z-index: 2;
 padding-right:5rem;
 h2{
     font-weight: lighter;
@@ -19,6 +20,7 @@ h2{
 `
 export const Image = styled.div`
     flex: 1;
+    z-index: 2;
     overflow: hidden;
 
     img{
