@@ -6,11 +6,12 @@ import teamwork from '../img/teamwork.svg'
 import home2 from '../img/home2.png'
 import styled from 'styled-components';
 import {About,Description,Image} from '../style';
-
-
+import UseScroll from './UseScroll'
+import {ScrollReveal } from '../animation'
 function ServicesSection() {
+    const [element,controls] = UseScroll();
     return (
-        <Services>
+        <Services ref={element} variants={ScrollReveal } animate={controls} initial='hidden'>
             <Description>
                 <h2>High <span>quality </span>services</h2>
 
@@ -72,10 +73,10 @@ const Cards = styled.div`
 display: flex;
 flex-wrap: wrap;
 
+
 .icon{
     display: flex;
     align-items: center;
-
     h3{
         margin-left: 1rem;
         background: #fff;
@@ -85,8 +86,5 @@ flex-wrap: wrap;
         padd
     }
 }
-
 `
-
-
 export default ServicesSection;
