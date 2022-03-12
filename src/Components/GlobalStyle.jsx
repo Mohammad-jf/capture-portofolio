@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
 
     body{
         background-color: #1b1b1b;
+        overflow-x: hidden;
 
     }
 
@@ -58,8 +59,6 @@ const GlobalStyle = createGlobalStyle`
             font-size: 1.1rem;
             
         }
-}
-
 `
 
-export default GlobalStyle
+export default GlobalStyle;

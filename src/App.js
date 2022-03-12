@@ -5,12 +5,11 @@ import Navigation from '../src/Components/Navigation'
 import ContactUs from "./pages/ContactUs";
 import OurWork from "./pages/OurWork";
 import MovieDetails from "./pages/MovieDetails";
-
 //router
 import { Switch , Route,useLocation } from 'react-router-dom';
-
 //aimation
 import {AnimatePresence} from 'framer-motion';
+
 
 
 function App() {
@@ -18,8 +17,10 @@ function App() {
 
   return (
     <div className="App">
-     <GlobalStyle/>
+      <GlobalStyle/>
+      
      <Navigation/>
+
     <AnimatePresence exitBeforeEnter>
 
         <Switch location={location} key={location.pathname}>

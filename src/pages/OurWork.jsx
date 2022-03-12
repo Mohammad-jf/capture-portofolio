@@ -9,12 +9,19 @@ import {Link} from 'react-router-dom'
 import {motion} from 'framer-motion';
 import {pageAnimation} from'../animation';
 import {fade,photoAnim,LineAnim,slider,sliderContainer} from '../animation';
+import UseScroll from './../Components/UseScroll';
+import ScrollTop from './../Components/ScrollTop';
+
 
 
 
 
 
 const OurWork = () => {
+  const [element,controls] = UseScroll();
+  const [element2,controls2] = UseScroll();
+
+
   return (
       <Work variants={pageAnimation} initial='hidden' animate='show' exit='exit' >
 
@@ -35,21 +42,23 @@ const OurWork = () => {
                  </Link>
           </Movie>
 
-          <Movie>
+          <Movie ref={element} variants={fade} animate={controls} initial='hidden'>
             <h2>The Racer</h2>
-            <div className="line"></div>
+            <motion.div variants={LineAnim} className="line"></motion.div>
                   <Link to="/work/the-racer">
                     <img src={theracer} alt="the racer"/>
                  </Link>
           </Movie>
 
-          <Movie>
+          <Movie ref={element2} initial='hidden' variants={fade} animate={controls2}>
             <h2>Good Times</h2>
-            <div className="line"></div>
+            <motion.div variants={LineAnim} className="line"></motion.div>
                   <Link to="/work/good-times">
                     <img src={goodtimes} alt="goodtimes"/>
                  </Link>
           </Movie>
+
+          <ScrollTop/>
 
       </Work>
   );
@@ -72,7 +81,7 @@ h2{
 }
 `
 
-const Movie = styled.div`
+const Movie = styled(motion.div)`
 padding-bottom : 10rem;
 
 .line{

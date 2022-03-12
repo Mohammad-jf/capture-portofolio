@@ -6,6 +6,9 @@ import  {MovieState}  from './../movieState';
 //animation
 import {motion} from 'framer-motion';
 import {pageAnimation} from'../animation';
+import ScrollTop from './../Components/ScrollTop';
+
+
 
 
 const MovieDetails = () => {
@@ -30,7 +33,7 @@ const MovieDetails = () => {
   return (      
     <>
       {movie && (
-        <Details variants={pageAnimation} exit='exit' initial='hidden' animate='show'>
+          <Details variants={pageAnimation} exit='exit' initial='hidden' animate='show'>
                 <HeadLine>
                     <h2>{movie.title}</h2>
                     <img src={movie.mainImg} alt={movie.title} />
@@ -39,13 +42,14 @@ const MovieDetails = () => {
                     <Awards>
                         {movie.awards.map((award)=>(
                             <Award title={award.title} description={award.description} key={award.title}/>
-                        ))}
+                            ))}
 
                     </Awards>  
 
                     <ImageDisplay>
                         <img src={movie.secondaryImg} alt="" />
                     </ImageDisplay>
+             <ScrollTop/>
         </Details>
       )}
   </>                                                                                        

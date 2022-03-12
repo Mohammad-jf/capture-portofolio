@@ -1,4 +1,3 @@
-import React from 'react'
 import {useInView} from 'react-intersection-observer';
 import { useAnimation } from 'framer-motion';
 
@@ -15,4 +14,4 @@ const UseScroll = () => {
   return [element,controls]
 }
 
-export default UseScroll
+export default UseScroll;

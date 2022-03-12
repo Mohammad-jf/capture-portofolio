@@ -7,7 +7,10 @@ import home2 from '../img/home2.png'
 import styled from 'styled-components';
 import {About,Description,Image} from '../style';
 import UseScroll from './UseScroll'
-import {ScrollReveal } from '../animation'
+import {ScrollReveal } from '../animation';
+
+
+
 function ServicesSection() {
     const [element,controls] = UseScroll();
     return (
@@ -83,8 +86,7 @@ flex-wrap: wrap;
         color:black;
         padding: 0.7rem;
         border-radius: 5px;
-        padd
-    }
+    };
 }
 `
 export default ServicesSection;

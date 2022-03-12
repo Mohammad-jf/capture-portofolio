@@ -25,6 +25,9 @@ justify-content:space-between;
 align-items:center;
 padding:1rem 4rem;
 background:#282828;
+position: sticky;
+top: 0;
+z-index: 10;
 
 h1{
   a{
