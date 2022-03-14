@@ -23,7 +23,7 @@ const OurWork = () => {
 
 
   return (
-      <Work variants={pageAnimation} initial='hidden' animate='show' exit='exit' >
+      <Work variants={pageAnimation} initial='hidden' animate='show' exit='exit'>
 
         <motion.div variants={sliderContainer}>
         <Frame1 variants={slider}></Frame1>
@@ -42,19 +42,24 @@ const OurWork = () => {
                  </Link>
           </Movie>
 
-          <Movie ref={element} variants={fade} animate={controls} initial='hidden'>
+            <Movie ref={element} initial='hidden' variants={fade} animate={controls}>
             <h2>The Racer</h2>
             <motion.div variants={LineAnim} className="line"></motion.div>
                   <Link to="/work/the-racer">
-                    <img src={theracer} alt="the racer"/>
+                    <Hide>
+                      <img src={theracer} alt="the racer"/>
+                    </Hide>
                  </Link>
           </Movie>
 
           <Movie ref={element2} initial='hidden' variants={fade} animate={controls2}>
             <h2>Good Times</h2>
             <motion.div variants={LineAnim} className="line"></motion.div>
+                
                   <Link to="/work/good-times">
-                    <img src={goodtimes} alt="goodtimes"/>
+                    <Hide>
+                      <img src={goodtimes} alt="goodtimes"/>
+                    </Hide>
                  </Link>
           </Movie>
 
@@ -68,40 +73,47 @@ const OurWork = () => {
 
 const Work = styled(motion.div)`
   min-height:100vh;
+  padding:3rem 5rem;
   overflow:hidden;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  
 
 h2{
   padding:1rem 0rem;
   color:#fff;
 }
+
+@media(max-width:1000px){
+    h2{
+      text-align: center;
+    }
+    padding: 2rem 2rem;
+
+  }
+
+
 `
 
 const Movie = styled(motion.div)`
-padding-bottom : 10rem;
+padding-bottom : 7rem;
 
 .line{
   height:0.5rem;
   background:#23d997;
   margin-bottom:3rem;
-
-  .img{
+}
+  img{
     width:100%;
-    height:70vh;
+    height: 100%;
     object-fit:cover;
   }
-}
+
 `
 
 const Hide = styled.div`
   overflow: hidden;
 `
-//frame anim
 
+
+//frame anim
 const Frame1 = styled(motion.div)`
   position: fixed;
   left: 0;
@@ -112,13 +124,14 @@ const Frame1 = styled(motion.div)`
   z-index: 2;`
 
   const Frame2 = styled(Frame1)`
-  background: #ff8efb;
+    background: #ff8efb;
   `
-const Frame3 = styled(Frame1)`
-background: #8ed2ff;
-`
+  const Frame3 = styled(Frame1)`
+    background: #8ed2ff;
+   `
 
-const Frame4 = styled(Frame1)`
-background: #8effa0;
-`
+  const Frame4 = styled(Frame1)`
+    background: #8effa0;
+  `
+
 export default OurWork;

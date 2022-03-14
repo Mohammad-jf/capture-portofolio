@@ -28,6 +28,9 @@ background:#282828;
 position: sticky;
 top: 0;
 z-index: 10;
+@media (max-width:680px){
+  flex-direction: column;
+}
 
 h1{
   a{
@@ -50,6 +53,9 @@ ul{
         text-decoration:none;
         color:#fff;
         transition:all 0.4s ease;
+        @media (max-width: 680px){
+        padding: 20px 30px;
+        }
         &:hover{
       color:#23d997;
     }

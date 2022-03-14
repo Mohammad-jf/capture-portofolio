@@ -59,28 +59,38 @@ const MovieDetails = () => {
 
 const Details = styled(motion.div)`
 color:white;
+padding: 0 5rem;
+
+@media(max-width:1000px){
+    max-width: 100%;
+    padding:0 2rem;
+}
 
 
   
 `
 const HeadLine = styled.div`
 min-height: 90vh;
-padding-top: 25vh;
+margin-top:3rem;
 position: relative;
+text-align: center;
 
 h2{
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%,-5%);
-
+    margin-bottom: 3rem;
 }
 
 img{
     width: 100%;
-    height: 100vh;
     object-fit: cover;       
 }
+
+@media(max-width:1000px){
+   h2{
+       font-size: 3.3rem;
+   }
+   min-height: 65vh;
+}
+
 `
 
 const Awards = styled.div`
@@ -93,6 +103,12 @@ align-items: center;
 p{
     text-align: center;
 }
+
+@media(max-width:1000px){
+margin-top:2rem;
+flex-direction: column;
+}
+
 `
 
 const AwardStyle = styled.div`

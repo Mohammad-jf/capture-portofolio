@@ -59,6 +59,9 @@ padding: 5rem 10rem;
 color: #353535;
 min-height: 90vh;
 
+@media(max-width:1000px){
+  padding: 3rem 2rem;
+}
 `
 
 const Title = styled.div`
@@ -77,10 +80,19 @@ background-color: #353535;
  const SocialLinks = styled(motion.div)`
  display: flex;
  align-items: center;
+
  h2{
    margin: 2rem;
+   font-size: 3.5rem;
  }
+
+
+ @media(max-width:1000px){
  
+  h2{
+    font-size:2.5rem;
+  }
+} 
  `
 
 
